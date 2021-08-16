@@ -24,6 +24,10 @@ export class FieldUseCase {
     this.matches = [];
   }
 
+  getMatches = () => {
+    return this.matches
+  };
+
   setGameUseCase = (gameUseCase) => {
     this.gameUseCase = gameUseCase; 
   }
@@ -73,10 +77,10 @@ export class FieldUseCase {
 
     this.field.update();
 
-    this.matches = this.getMatches();
+    this.findMatches();
   }
 
-  getMatches = () => {
+  findMatches = () => {
     const grid = this.mainGrid;
     let matches = [];
 
@@ -197,7 +201,6 @@ export class FieldUseCase {
         }
       }
     }
-
     this.matches = matches;
   }
 

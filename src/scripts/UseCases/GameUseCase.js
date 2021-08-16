@@ -66,15 +66,15 @@ export class GameUseCase {
     const fieldUseCase = this.fieldUseCase;
 
     fieldUseCase.fillTiles()
-    fieldUseCase.getMatches();
+    fieldUseCase.findMatches();
 
-    if(fieldUseCase.matches.length == 0) {
+    if(fieldUseCase.getMatches().length == 0) {
       this.shuffleZeroMatches();
     }
   }
 
   getElementsDefaultTurn = (gameTile) => {
-    return gameTile.alreadyInMatch ? this.fieldUseCase.matches[gameTile.indexOfMatch] : [];
+    return gameTile.alreadyInMatch ? this.fieldUseCase.getMatches()[gameTile.indexOfMatch] : [];
   }
 
   getElementsForLineBonus = (gameTile) => {
@@ -157,9 +157,9 @@ export class GameUseCase {
 
     fieldUseCase.resetTiles();
     fieldUseCase.fillTiles();
-    fieldUseCase.getMatches();
+    fieldUseCase.findMatches();
 
-    if (this.superBonusCount == 0 && fieldUseCase.matches.length == 0) {
+    if (this.superBonusCount == 0 && fieldUseCase.getMatches().length == 0) {
       this.shuffleZeroMatches();
     }
   }
@@ -184,7 +184,7 @@ export class GameUseCase {
 
     this.useShuffleField();
 
-    if (this.fieldUseCase.matches.length == 0) {
+    if (this.fieldUseCase.getMatches().length == 0) {
       this.shuffleZeroMatches()
     }
   }
