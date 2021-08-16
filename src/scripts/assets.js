@@ -4,6 +4,7 @@ export class Assets {
   }
 
   init() {
+    debugger
     const loadOptions = { crossOrigin: true };
     const loader = this.app.loader;
     loader.baseUrl = "assets/";

@@ -23,7 +23,7 @@ export class GameTile {
       this.sprite.anchor.set(0.5, 0.5);
       this.sprite.position.set(tileXCorrection + (x * this.sprite.width), this.sprite.width/2);
       this.sprite.interactive = true;
-      this.sprite.click = onClick;
+      this.sprite.on('pointerdown', onClick);
       this.sprite.tile = this;
     }
 

@@ -58,7 +58,7 @@ export class Bonus {
   setBonusTypeScale = (scale) => this.bonusType.scale.set(scale);
   setBonusTypePosition = (x, y) => this.bonusType.position.set(x, y);
 
-  setCallback = (callback) => this.bonusElement.click = callback;
+  setCallback = (callback) => this.bonusElement.on("pointerdown", callback);
   setCount = (count) => {
     this.count = count;
     this.bonusCountText.text = `${count}`;

@@ -20,7 +20,7 @@ export class FinishScreen {
     this.panel.height = view.height;
     this.panel.alpha = 0.5;
     this.panel.interactive = true;
-    this.panel.click = this.callback;
+    this.panel.on('pointerdown', this.callback)
     this.panel.tint = 0x262a33;
 
     this.app.stage.addChild(this.panel);

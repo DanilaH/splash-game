@@ -5,6 +5,7 @@ import { UITextures } from "./uiTextures.js";
 import gsap from "gsap";
 import PixiPlugin from "gsap/PixiPlugin";
 import { GameInitializer } from "./GameInitializer.js";
+import { AppResizer } from "./AppResizer.js";
 
 
 export class Application {
@@ -19,7 +20,8 @@ export class Application {
         antialias: true,
         resolution: 1,
         autoDensity: true,
-        autoResize: true
+        autoResize: true,
+        resizeTo: window
       };
 
       this.renderer = new PIXI.Renderer(options);
@@ -44,6 +46,7 @@ export class Application {
       this.addComponent((this.uiTextures = new UITextures(this)));
       this.addComponent((this.figureTypes = new FigureTypes(this)));
       this.addComponent((this.gameInitializer = new GameInitializer(this)));
+      this.addComponent((this.appResizer = new AppResizer(this)));
     };
 
     addComponent(comp) {
