@@ -14,11 +14,10 @@ module.exports = {
                 test: /\.(png|svg|jpg|jpeg|gif)$/i,
                 type: 'asset/resource',
             },
-            //{ test: /\.css$/, use: [ 'style-loader', 'css-loader' ] },
             {
                 test: /\.css$/i,
                 use: [MiniCssExtractPlugin.loader, "css-loader"],
-              },
+            },
         ]
     },
     output: {
