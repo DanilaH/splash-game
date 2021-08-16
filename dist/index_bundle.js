@@ -686,7 +686,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"AppResizer\": () => (/* binding */ AppResizer)\n/* harmony export */ });\nclass AppResizer {\n  constructor(app) {\n    this.app = app;\n    this.ratio = this.app.view.width / this.app.view.height;\n  }\n\n  init() {\n    debugger;\n    window.onresize = this.resize;\n  }\n\n  resolutionGreaterThenRatio = () => window.innerWidth / window.innerHeight >= this.ratio;\n\n  resize() {\n    const condition = this.resolutionGreaterThenRatio();\n    const width = condition ? window.innerHeight * this.ratio : window.innerWidth;\n    const height = condition ? window.innerHeight : window.innerWidth / this.ratio;\n    console.log(\"resizer\");\n    this.app.renderer.view.style.width = width + 'px';\n    this.app.renderer.view.style.height = height + 'px';\n  }\n\n}\n\n//# sourceURL=webpack://splash-game/./src/scripts/AppResizer.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"AppResizer\": () => (/* binding */ AppResizer)\n/* harmony export */ });\nclass AppResizer {\n  constructor(app) {\n    this.app = app;\n    this.ratio = this.app.view.width / this.app.view.height;\n  }\n\n  init() {\n    this.resize();\n    window.onresize = this.resize;\n  }\n\n  resolutionGreaterThenRatio = () => window.innerWidth / window.innerHeight >= this.ratio;\n  resize = () => {\n    const condition = this.resolutionGreaterThenRatio();\n    const width = condition ? window.innerHeight * this.ratio : window.innerWidth;\n    const height = condition ? window.innerHeight : window.innerWidth / this.ratio;\n    this.app.renderer.view.style.width = width + 'px';\n    this.app.renderer.view.style.height = height + 'px';\n  };\n}\n\n//# sourceURL=webpack://splash-game/./src/scripts/AppResizer.js?");
 
 /***/ }),
 
@@ -906,7 +906,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n    if(true) {\n      // 1629136376648\n      var cssReload = __webpack_require__(/*! ./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js */ \"./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js\")(module.id, {\"locals\":false});\n      module.hot.dispose(cssReload);\n      module.hot.accept(undefined, cssReload);\n    }\n  \n\n//# sourceURL=webpack://splash-game/./src/styles.css?");
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n    if(true) {\n      // 1629136666010\n      var cssReload = __webpack_require__(/*! ./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js */ \"./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js\")(module.id, {\"locals\":false});\n      module.hot.dispose(cssReload);\n      module.hot.accept(undefined, cssReload);\n    }\n  \n\n//# sourceURL=webpack://splash-game/./src/styles.css?");
 
 /***/ })
 
@@ -1007,7 +1007,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("bd8a1c90217359ff3b34")
+/******/ 		__webpack_require__.h = () => ("a21ce2cbdf6b405c42e3")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
