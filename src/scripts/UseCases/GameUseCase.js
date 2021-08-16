@@ -141,7 +141,7 @@ export class GameUseCase {
     this.fieldUseCase.removeMatch(match);
     
     if(match.length > 9) {
-      this.addTile(tile.xCoord, tile.yCoord, true);
+      this.fieldUseCase.addTile(tile.xCoord, tile.yCoord, true);
       this.superBonusCount++;
     }
 
